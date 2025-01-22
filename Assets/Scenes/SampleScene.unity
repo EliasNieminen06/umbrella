@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e79688d8a913478db620bd80467a350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerHealth: {fileID: 6056559830616700571, guid: 598b48d2fdfc249b388ef2a7ddb8f841, type: 3}
+  powerHealth: {fileID: 0}
   minSpawnDistance: -8
   maxSpawnDistance: 8
-  spawnCooldown: 5
+  spawnCooldown: 7
 --- !u!4 &267489245
 Transform:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   speed: 4
   minX: -8
   maxX: 8
-  minY: -3
+  minY: -5
   maxY: 5
 --- !u!1 &1467309362
 GameObject:
@@ -769,8 +769,8 @@ MonoBehaviour:
   minHitmanDistance: -7
   maxHitmanDistance: 7
   staticBlock: {fileID: 5906002383344157272, guid: 1a9ee4b661dfc4f16a5167bd64017c1d, type: 3}
-  minStaticDistance: -8.5
-  maxStaticDistance: 8.5
+  minStaticDistance: -8
+  maxStaticDistance: 8
   MovingBlock: {fileID: 3542233506710282876, guid: f2740818461e0444d9d09e05e57bdc79, type: 3}
   minMovingDistance: -5
   maxMovingDistance: 5
