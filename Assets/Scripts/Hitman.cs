@@ -8,6 +8,7 @@ public class Hitman : MonoBehaviour
     public Transform gunEnd;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
+    public GameObject hand;
 
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -20,6 +21,10 @@ public class Hitman : MonoBehaviour
             FireProjectile();
             nextFireTime = Time.time + 1f / fireRate;
         }
+    }
+
+    void FixedUpdate(){
+        hand.transform.LookAt(player);
     }
 
     void FireProjectile()

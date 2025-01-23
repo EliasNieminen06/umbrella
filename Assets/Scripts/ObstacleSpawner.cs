@@ -33,7 +33,6 @@ public class ObstacleSpawner : MonoBehaviour
     public IEnumerator Spawning(){
         while (Player.instance.gameOn){
         int randomObstacle = Random.Range(1,4);
-        print(randomObstacle);
         if (randomObstacle == 1){
             SpawnHitman();
         }

@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float maxX;
     public float minY;
     public float maxY;
-    public float fallen;
+    public int fallen;
     public int health;
     public bool gameOn;
     public GameObject failScene;
@@ -69,11 +69,18 @@ public class Player : MonoBehaviour
         anim.SetTrigger("fall");
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("obstacle");
         GameObject[] hitmans = GameObject.FindGameObjectsWithTag("hitman");
+        GameObject[] healths = GameObject.FindGameObjectsWithTag("health");
         foreach (GameObject obstacle in obstacles){
             Destroy(obstacle);
         }
         foreach (GameObject hitman in hitmans){
             Destroy(hitman);
+        }
+        foreach (GameObject healthh in healths){
+            Destroy(healthh);
+        }
+        if (PlayerPrefs.GetInt("HighScore") < fallen){
+            PlayerPrefs.SetInt("HighScore", fallen);
         }
     }
 
