@@ -84,9 +84,7 @@ public class Player : MonoBehaviour
             if (health <= 0){
                 Fail();
             }
-            else{
-                UI.instance.RemoveHealth();
-            }
+            UI.instance.RemoveHealth();
         }
         if (other.gameObject.CompareTag("obstacle")){
             Fail();

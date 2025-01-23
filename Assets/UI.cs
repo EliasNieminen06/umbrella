@@ -27,8 +27,7 @@ public class UI : MonoBehaviour
     }
     
     public void AddHealth(){
-        GameObject newHealthObj = Instantiate(healthPf);
-        newHealthObj.transform.parent = healthParent.transform;
+        GameObject newHealthObj = Instantiate(healthPf, transform.parent = healthParent.transform);
     }
 
     public void RemoveHealth(){
