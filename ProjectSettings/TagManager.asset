@@ -9,6 +9,7 @@ TagManager:
   - bullet
   - hitman
   - health
+  - healthUI
   layers:
   - Default
   - TransparentFX

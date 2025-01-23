@@ -25,12 +25,6 @@ public class Player : MonoBehaviour
         Announcements.instance.Announce("Get ready!", 2);
     }
 
-    void Update(){
-        if (health <= 0){
-            Fail();
-        }
-    }
-
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.A)){
@@ -87,17 +81,30 @@ public class Player : MonoBehaviour
     void OnCollisionEnter(Collision other){
         if (other.gameObject.CompareTag("bullet")){
             health--;
+            if (health <= 0){
+                Fail();
+            }
+            else{
+                UI.instance.RemoveHealth();
+            }
         }
         if (other.gameObject.CompareTag("obstacle")){
             Fail();
+            GameObject[] healthUIs = GameObject.FindGameObjectsWithTag("healthUI");
+            foreach (GameObject healthUI in healthUIs){
+                Destroy(healthUI);
+            }
         }
     }
 
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("health")){
-            health++;
+            if (health < 10){
+                health++;
+                UI.instance.AddHealth();
+                Announcements.instance.Announce("+1 Health", 2);
+            }
             Destroy(other.gameObject);
-            Announcements.instance.Announce("+1 Health", 2);
         }
     }
 }
