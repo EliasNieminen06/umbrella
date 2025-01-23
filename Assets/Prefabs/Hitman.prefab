@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -213209202607910745}
   m_Layer: 6
   m_Name: Hitman
-  m_TagString: obstacle
+  m_TagString: hitman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7524eeffc0d644654bdc507699ff4729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  lifeTime: 7
+  speed: 1
+  lifeTime: 16
 --- !u!114 &-213209202607910745
 MonoBehaviour:
   m_ObjectHideFlags: 0

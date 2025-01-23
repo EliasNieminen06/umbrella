@@ -7,6 +7,8 @@ TagManager:
   - obstacle
   - powerup
   - bullet
+  - hitman
+  - health
   layers:
   - Default
   - TransparentFX

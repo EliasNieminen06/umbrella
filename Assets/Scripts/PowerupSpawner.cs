@@ -14,19 +14,20 @@ public class PowerupSpawner : MonoBehaviour
     }
 
     public IEnumerator Spawning(){
-        int randomObstacle = Random.Range(1,2);
-        print(randomObstacle);
-        if (randomObstacle == 1){
-            SpawnHealth();
-        }
-        if (randomObstacle == 2){
+        while (Player.instance.gameOn){
+            int randomObstacle = Random.Range(1,2);
+            print(randomObstacle);
+            if (randomObstacle == 1){
+                SpawnHealth();
+            }
+            if (randomObstacle == 2){
 
-        }
-        if (randomObstacle == 3){
+            }
+            if (randomObstacle == 3){
 
+            }
+            yield return new WaitForSeconds(spawnCooldown);
         }
-        yield return new WaitForSeconds(spawnCooldown);
-        StartCoroutine(Spawning());
     }
 
     public void SpawnHealth(){
